@@ -1,0 +1,20 @@
+{
+  "name": "Bryle Portfolio",
+  "short_name": "Bryle",
+  "description": "Portfolio of Bryle James Agra with full-stack work, backend technologies, and polished UI motion.",
+  "theme_color": "#0f62fe",
+  "background_color": "#081226",
+  "display": "standalone",
+  "icons": [
+    {
+      "src": "/android-chrome-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/android-chrome-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

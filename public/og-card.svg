@@ -1,0 +1,29 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="630" rx="36" fill="#081226" />
+  <circle cx="171" cy="124" r="180" fill="#0F62FE" fill-opacity="0.28" />
+  <circle cx="1042" cy="113" r="170" fill="#59B6FF" fill-opacity="0.22" />
+  <rect x="96" y="112" width="1008" height="406" rx="32" fill="url(#panel)" />
+  <text x="138" y="204" fill="#7FCBFF" font-family="Segoe UI, Arial, sans-serif" font-size="22" font-weight="700" letter-spacing="0.18em">
+    BRYLE JAMES AGRA
+  </text>
+  <text x="138" y="294" fill="white" font-family="Segoe UI, Arial, sans-serif" font-size="70" font-weight="700">
+    Full-stack portfolio
+  </text>
+  <text x="138" y="376" fill="white" font-family="Segoe UI, Arial, sans-serif" font-size="70" font-weight="700">
+    with backend skills,
+  </text>
+  <text x="138" y="458" fill="white" font-family="Segoe UI, Arial, sans-serif" font-size="70" font-weight="700">
+    parallax, and dark mode.
+  </text>
+  <rect x="776" y="182" width="232" height="148" rx="24" fill="#FFFFFF" fill-opacity="0.08" />
+  <rect x="810" y="220" width="132" height="14" rx="7" fill="#FFFFFF" fill-opacity="0.82" />
+  <rect x="810" y="251" width="174" height="14" rx="7" fill="#FFFFFF" fill-opacity="0.48" />
+  <rect x="776" y="354" width="152" height="98" rx="24" fill="#FFFFFF" fill-opacity="0.12" />
+  <rect x="946" y="354" width="118" height="98" rx="24" fill="#FFFFFF" fill-opacity="0.2" />
+  <defs>
+    <linearGradient id="panel" x1="96" y1="112" x2="1104" y2="518" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0D1D3A" />
+      <stop offset="1" stop-color="#102547" />
+    </linearGradient>
+  </defs>
+</svg>
