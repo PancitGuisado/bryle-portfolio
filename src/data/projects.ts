@@ -26,8 +26,8 @@ export const projects: Project[] = [
   {
     title: "EZ MART",
     description:
-      "A streamlined application that allows users to build their resume by filling in the information needed for a complete resume.",
-    tags: ["Resume Builder", "Form Workflow", "User Experience"],
+      "A streamlined e-commerce application that provides users with a seamless online shopping experience, featuring intuitive product navigation and secure checkout.",
+    tags: ["E-commerce", "Online Shopping", "User Experience"],
     github: "https://github.com/eilrahcdev/EZ-Mart",
     featured: false,
   },
