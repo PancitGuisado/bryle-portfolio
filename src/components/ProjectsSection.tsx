@@ -22,6 +22,7 @@ const projects = [
     description:
       "A streamlined application that allows users to build their resume by filling in the information needed for a complete resume.",
     tags: ["Resume Builder", "Form Workflow", "User Experience"],
+    github: "https://github.com/eilrahcdev/EZ-Mart",
     featured: false,
   },
 ];
