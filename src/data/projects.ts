@@ -9,6 +9,13 @@ export interface Project {
 
 export const projects: Project[] = [
   {
+    title: "Kanibalismo",
+    description: "A 2D single-player survival sandbox game featuring a day and night cycle, crafting, and building mechanics.",
+    tags: ["Game", "Survival", "Sandbox", "2D"],
+    link: "https://kanibalismo.vercel.app/",
+    featured: true,
+  },
+  {
     title: "EduBridge",
     description:
       "EduBridge is an educational platform that integrates artificial intelligence with structured learning to improve how students study and how teachers manage their classes.",
