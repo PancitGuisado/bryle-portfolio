@@ -1,17 +1,56 @@
 import ThemeToggle from "./ThemeToggle";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 
 const links = [
-  { label: "About", href: "#about" },
-  { label: "Skills", href: "#skills" },
-  { label: "Projects", href: "#projects" },
-  { label: "Contact", href: "#contact" },
+  { label: "About", hash: "about" },
+  { label: "Skills", hash: "skills" },
+  { label: "Projects", hash: "projects" },
+  { label: "Contact", hash: "contact" },
 ];
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const location = useLocation();
+  const navigate = useNavigate();
+  const isHome = location.pathname === "/";
+
+  const handleNavClick = useCallback(
+    (e: React.MouseEvent<HTMLAnchorElement>, hash: string) => {
+      e.preventDefault();
+      if (isHome) {
+        const el = document.getElementById(hash);
+        el?.scrollIntoView({ behavior: "smooth" });
+      } else {
+        navigate("/#" + hash);
+      }
+    },
+    [isHome, navigate],
+  );
+
+  const handleLogoClick = useCallback(
+    (e: React.MouseEvent<HTMLAnchorElement>) => {
+      e.preventDefault();
+      if (isHome) {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      } else {
+        navigate("/");
+      }
+    },
+    [isHome, navigate],
+  );
+
+  /* On homepage mount, scroll to hash if present (e.g. navigated from /projects) */
+  useEffect(() => {
+    if (isHome && location.hash) {
+      const id = location.hash.replace("#", "");
+      setTimeout(() => {
+        document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+      }, 100);
+    }
+  }, [isHome, location.hash]);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
@@ -28,7 +67,7 @@ export default function Navbar() {
       }`}
     >
       <div className="mx-auto flex h-16 max-w-5xl items-center justify-between px-6">
-        <a href="#" className="group font-display text-xl font-bold tracking-tight text-foreground transition-colors">
+        <a href="/" onClick={handleLogoClick} className="group font-display text-xl font-bold tracking-tight text-foreground transition-colors">
           BJ<span className="gradient-text transition-opacity group-hover:opacity-80">.</span>
         </a>
 
@@ -36,8 +75,9 @@ export default function Navbar() {
         <div className="hidden items-center gap-1 md:flex">
           {links.map((l) => (
             <a
-              key={l.href}
-              href={l.href}
+              key={l.hash}
+              href={`/#${l.hash}`}
+              onClick={(e) => handleNavClick(e, l.hash)}
               className="relative px-4 py-2 text-sm font-medium text-muted-foreground transition-colors hover:text-foreground after:absolute after:bottom-1 after:left-4 after:right-4 after:h-px after:scale-x-0 after:bg-primary after:transition-transform after:duration-300 hover:after:scale-x-100"
             >
               {l.label}
@@ -72,9 +112,12 @@ export default function Navbar() {
         <div className="px-6 py-3">
           {links.map((l, i) => (
             <a
-              key={l.href}
-              href={l.href}
-              onClick={() => setOpen(false)}
+              key={l.hash}
+              href={`/#${l.hash}`}
+              onClick={(e) => {
+                handleNavClick(e, l.hash);
+                setOpen(false);
+              }}
               className="block py-2.5 text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
               style={{ transitionDelay: open ? `${i * 50}ms` : "0ms" }}
             >
