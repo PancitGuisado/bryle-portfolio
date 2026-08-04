@@ -15,10 +15,12 @@ export default defineConfig({
     react(),
     VitePWA({
       registerType: "autoUpdate",
+      injectRegister: "auto",
       includeAssets: ["favicon.ico", "apple-touch-icon.png", "favicon.svg"],
       workbox: {
         globPatterns: ["**/*.{js,css,html,ico,png,svg,mp4,jpg,jpeg,webp,woff2}"],
         maximumFileSizeToCacheInBytes: 150000000,
+        navigateFallback: "/index.html",
       },
       manifest: false, // We're using the existing site.webmanifest in index.html
     }),
