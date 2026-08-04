@@ -1,4 +1,5 @@
 import ThemeToggle from "./ThemeToggle";
+import SpotifyWidget from "./SpotifyWidget";
 import { useState, useEffect, useCallback } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { Menu, X } from "lucide-react";
@@ -83,13 +84,15 @@ export default function Navbar() {
               {l.label}
             </a>
           ))}
-          <div className="ml-4">
+          <div className="ml-4 flex items-center gap-2">
+            <SpotifyWidget />
             <ThemeToggle />
           </div>
         </div>
 
         {/* Mobile */}
-        <div className="flex items-center gap-3 md:hidden">
+        <div className="flex items-center gap-2 md:hidden">
+          <SpotifyWidget />
           <ThemeToggle />
           <button
             onClick={() => setOpen(!open)}
