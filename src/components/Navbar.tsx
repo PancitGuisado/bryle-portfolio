@@ -69,7 +69,7 @@ export default function Navbar() {
     >
       <div className="mx-auto flex h-16 max-w-5xl items-center justify-between px-6">
         <a href="/" onClick={handleLogoClick} className="group font-display text-xl font-bold tracking-tight text-foreground transition-colors">
-          BJ<span className="gradient-text transition-opacity group-hover:opacity-80">.</span>
+          birashii.dev
         </a>
 
         {/* Desktop */}
