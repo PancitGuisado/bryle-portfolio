@@ -5,6 +5,8 @@ export interface Project {
   link?: string;
   github?: string;
   featured: boolean;
+  video?: string;
+  image?: string;
 }
 
 export const projects: Project[] = [
@@ -14,6 +16,7 @@ export const projects: Project[] = [
     tags: ["Game", "Survival", "Sandbox", "2D"],
     link: "https://kanibalismo.vercel.app/",
     featured: true,
+    video: "/projects/kanibalismo.mp4",
   },
   {
     title: "EduBridge",
@@ -22,6 +25,7 @@ export const projects: Project[] = [
     tags: ["Educational Platform", "Artificial Intelligence", "Structured Learning"],
     link: "https://edubridgeorg.vercel.app/",
     featured: true,
+    video: "/projects/edubridge.mp4",
   },
   {
     title: "Resumaker",
@@ -30,6 +34,7 @@ export const projects: Project[] = [
     tags: ["AI", "Resume Builder", "Productivity", "Web App"],
     link: "https://airesumaker.vercel.app/",
     featured: true,
+    video: "/projects/resumaker.mp4",
   },
   {
     title: "Mocha Moments",
@@ -37,6 +42,7 @@ export const projects: Project[] = [
     tags: ["Ordering System", "Coffee Shop", "Customer Flow"],
     github: "https://github.com/PancitGuisado/MochaMomints",
     featured: false,
+    video: "/projects/mocha-moments.mp4",
   },
   {
     title: "EZ MART",
@@ -45,6 +51,7 @@ export const projects: Project[] = [
     tags: ["E-commerce", "Online Shopping", "User Experience"],
     github: "https://github.com/eilrahcdev/EZ-Mart",
     featured: false,
+    image: "/projects/ezmart.jpg",
   },
   {
     title: "The BigBang Theory Taptap",
@@ -52,5 +59,6 @@ export const projects: Project[] = [
     tags: ["Game", "Interactive", "Entertainment"],
     link: "https://tbbttaptap.vercel.app/",
     featured: false,
+    video: "/projects/taptap.mp4",
   },
 ];
