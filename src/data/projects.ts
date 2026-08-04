@@ -24,6 +24,14 @@ export const projects: Project[] = [
     featured: true,
   },
   {
+    title: "Resumaker",
+    description:
+      "An AI-powered resume builder that helps users create professional, polished resumes effortlessly with smart formatting and content suggestions.",
+    tags: ["AI", "Resume Builder", "Productivity", "Web App"],
+    link: "https://airesumaker.vercel.app/",
+    featured: true,
+  },
+  {
     title: "Mocha Moments",
     description: "A coffeeshop ordering system.",
     tags: ["Ordering System", "Coffee Shop", "Customer Flow"],
