@@ -22,16 +22,60 @@ export default function ContactSection() {
           love to hear from you.
         </p>
 
-        <a
-          href="mailto:brylejamesagra@gmail.com"
-          className="group relative mt-8 inline-flex h-12 items-center gap-2.5 overflow-hidden rounded-xl px-7 text-sm font-semibold text-primary-foreground shadow-lg shadow-primary/25 transition-all hover:shadow-xl hover:shadow-primary/35 active:scale-[0.97]"
-          style={{ background: "var(--gradient-primary)" }}
+        <form
+          action="https://formsubmit.co/brylejamesfagra@gmail.com"
+          method="POST"
+          className="mx-auto mt-10 max-w-md space-y-4 text-left"
         >
-          <Mail className="h-4 w-4" />
-          <span className="relative z-10">Say Hello</span>
-          <ArrowUpRight className="h-3.5 w-3.5 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
-          <div className="absolute inset-0 bg-foreground/10 opacity-0 transition-opacity group-hover:opacity-100" />
-        </a>
+          {/* FormSubmit Configuration */}
+          <input type="hidden" name="_subject" value="New Contact Form Submission from Portfolio" />
+          <input type="hidden" name="_captcha" value="false" />
+          <input type="hidden" name="_template" value="table" />
+
+          <div>
+            <label htmlFor="name" className="sr-only">Name</label>
+            <input
+              type="text"
+              name="name"
+              id="name"
+              required
+              placeholder="Your Name"
+              className="w-full rounded-xl border border-border bg-background px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"
+            />
+          </div>
+          <div>
+            <label htmlFor="email" className="sr-only">Email</label>
+            <input
+              type="email"
+              name="email"
+              id="email"
+              required
+              placeholder="Your Email"
+              className="w-full rounded-xl border border-border bg-background px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"
+            />
+          </div>
+          <div>
+            <label htmlFor="message" className="sr-only">Message</label>
+            <textarea
+              name="message"
+              id="message"
+              required
+              rows={4}
+              placeholder="Your Message"
+              className="w-full resize-none rounded-xl border border-border bg-background px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"
+            />
+          </div>
+          <button
+            type="submit"
+            className="group relative mt-2 inline-flex w-full h-12 items-center justify-center gap-2.5 overflow-hidden rounded-xl px-7 text-sm font-semibold text-primary-foreground shadow-lg shadow-primary/25 transition-all hover:shadow-xl hover:shadow-primary/35 active:scale-[0.98]"
+            style={{ background: "var(--gradient-primary)" }}
+          >
+            <Mail className="h-4 w-4" />
+            <span className="relative z-10">Send Message</span>
+            <ArrowUpRight className="h-3.5 w-3.5 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
+            <div className="absolute inset-0 bg-foreground/10 opacity-0 transition-opacity group-hover:opacity-100" />
+          </button>
+        </form>
 
         <div className="mt-10 flex items-center justify-center gap-3">
           {[
