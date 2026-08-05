@@ -39,13 +39,13 @@ export default function SpotifyWidget() {
 
       {/* Dropdown */}
       <div
-        className={`absolute right-0 top-full mt-3 z-[100] transition-all duration-300 origin-top-right ${
+        className={`absolute -right-16 sm:right-0 top-full mt-3 z-[100] transition-all duration-300 origin-top-right ${
           open
             ? "scale-100 opacity-100 translate-y-0"
             : "pointer-events-none scale-95 opacity-0 -translate-y-2"
         }`}
       >
-        <div className="w-[320px] overflow-hidden rounded-2xl border border-border bg-background/95 shadow-2xl backdrop-blur-xl">
+        <div className="w-[300px] sm:w-[320px] overflow-hidden rounded-2xl border border-border bg-background/95 shadow-2xl backdrop-blur-xl">
           {/* Header */}
           <div className="flex items-center gap-2 border-b border-border/60 px-4 py-3">
             <svg
