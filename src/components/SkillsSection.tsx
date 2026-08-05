@@ -15,7 +15,7 @@ const techStack = [
   { name: "Express.js", type: "image", src: "https://cdn.simpleicons.org/express", darkSrc: "https://cdn.simpleicons.org/express/white" },
   { name: "Node.js", type: "image", src: "https://cdn.simpleicons.org/nodedotjs/339933" },
   { name: "Figma", type: "image", src: "https://cdn.simpleicons.org/figma/F24E1E" },
-  { name: "Visual Studio Code", type: "image", src: "https://cdn.simpleicons.org/visualstudiocode/007ACC" },
+  { name: "Visual Studio", type: "image", src: "https://cdn.simpleicons.org/visualstudio/5C2D91" },
   { name: "GitHub", type: "image", src: "https://cdn.simpleicons.org/github", darkSrc: "https://cdn.simpleicons.org/github/white" },
   { name: "Vercel", type: "image", src: "https://cdn.simpleicons.org/vercel", darkSrc: "https://cdn.simpleicons.org/vercel/white" },
   { name: "Capacitor", type: "image", src: "https://cdn.simpleicons.org/capacitor/119EFF" },
