@@ -69,4 +69,12 @@ export const projects: Project[] = [
     featured: true,
     video: "/projects/buhaypedro.mp4",
   },
+  {
+    title: "PerfumeReco",
+    description: "A personalized fragrance recommendation platform helping users discover their ideal scent profiles.",
+    tags: ["Recommendation", "Lifestyle", "Web App"],
+    link: "https://perfumereco.vercel.app/",
+    featured: true,
+    video: "/projects/perfumereco.mp4",
+  },
 ];
