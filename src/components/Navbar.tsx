@@ -23,7 +23,10 @@ export default function Navbar() {
       e.preventDefault();
       if (isHome) {
         const el = document.getElementById(hash);
-        el?.scrollIntoView({ behavior: "smooth" });
+        if (el) {
+          const y = el.getBoundingClientRect().top + window.scrollY - 88;
+          window.scrollTo({ top: y, behavior: "smooth" });
+        }
       } else {
         navigate("/#" + hash);
       }
@@ -48,7 +51,11 @@ export default function Navbar() {
     if (isHome && location.hash) {
       const id = location.hash.replace("#", "");
       setTimeout(() => {
-        document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+        const el = document.getElementById(id);
+        if (el) {
+          const y = el.getBoundingClientRect().top + window.scrollY - 88;
+          window.scrollTo({ top: y, behavior: "smooth" });
+        }
       }, 100);
     }
   }, [isHome, location.hash]);

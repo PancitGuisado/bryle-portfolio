@@ -61,4 +61,12 @@ export const projects: Project[] = [
     featured: false,
     video: "/projects/taptap.mp4",
   },
+  {
+    title: "Buhay Pedro",
+    description: "An innovative digital platform designed to help users manage their daily tasks, schedules, and workflows effectively.",
+    tags: ["Productivity", "Task Management", "Web App"],
+    link: "https://buhaypedro.vercel.app/",
+    featured: true,
+    video: "/projects/buhaypedro.mp4",
+  },
 ];

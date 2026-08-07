@@ -85,6 +85,26 @@ export default function ContactSection() {
               label: "LinkedIn",
               href: "https://www.linkedin.com/in/bryle-james-agra-b233212b0/",
             },
+            {
+              icon: () => (
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  className="h-4 w-4 transition-transform group-hover:scale-110"
+                >
+                  <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+                </svg>
+              ),
+              label: "Facebook",
+              href: "https://www.facebook.com/bryle.agra.2025",
+            },
           ].map((social) => (
             <a
               key={social.label}
@@ -94,7 +114,11 @@ export default function ContactSection() {
               className="group flex h-11 w-11 items-center justify-center rounded-xl border border-border bg-card text-muted-foreground transition-all hover:border-primary/30 hover:text-foreground hover:shadow-[0_0_20px_-6px_hsl(var(--primary)/0.2)] active:scale-95"
               aria-label={social.label}
             >
-              <social.icon className="h-4 w-4 transition-transform group-hover:scale-110" />
+              {social.label === "Facebook" ? (
+                <social.icon />
+              ) : (
+                <social.icon className="h-4 w-4 transition-transform group-hover:scale-110" />
+              )}
             </a>
           ))}
         </div>
