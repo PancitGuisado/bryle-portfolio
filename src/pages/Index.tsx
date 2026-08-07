@@ -3,7 +3,6 @@ import HeroSection from "@/components/HeroSection";
 import AboutSection from "@/components/AboutSection";
 import SkillsSection from "@/components/SkillsSection";
 import ProjectsSection from "@/components/ProjectsSection";
-import MusicSection from "@/components/MusicSection";
 import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
 import { useAcceleratedScroll } from "@/hooks/useAcceleratedScroll";
@@ -18,7 +17,6 @@ const Index = () => {
       <AboutSection />
       <SkillsSection />
       <ProjectsSection />
-      <MusicSection />
       <ContactSection />
       <Footer />
     </div>

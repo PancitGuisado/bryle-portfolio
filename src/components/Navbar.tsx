@@ -1,5 +1,6 @@
 import ThemeToggle from "./ThemeToggle";
 import SpotifyWidget from "./SpotifyWidget";
+import MusicWidget from "./MusicWidget";
 import { useState, useEffect, useCallback } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { Menu, X } from "lucide-react";
@@ -8,7 +9,6 @@ const links = [
   { label: "About", hash: "about" },
   { label: "Skills", hash: "skills" },
   { label: "Projects", hash: "projects" },
-  { label: "Music", hash: "music" },
   { label: "Contact", hash: "contact" },
 ];
 
@@ -93,6 +93,7 @@ export default function Navbar() {
             </a>
           ))}
           <div className="ml-4 flex items-center gap-2">
+            <MusicWidget />
             <SpotifyWidget />
             <ThemeToggle />
           </div>
@@ -100,6 +101,7 @@ export default function Navbar() {
 
         {/* Mobile */}
         <div className="flex items-center gap-2 md:hidden">
+          <MusicWidget />
           <SpotifyWidget />
           <ThemeToggle />
           <button
