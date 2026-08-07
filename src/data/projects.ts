@@ -63,8 +63,8 @@ export const projects: Project[] = [
   },
   {
     title: "Buhay Pedro",
-    description: "An innovative digital platform designed to help users manage their daily tasks, schedules, and workflows effectively.",
-    tags: ["Productivity", "Task Management", "Web App"],
+    description: "A comic-style survival game about Pedro, a lower-class Filipino trying to survive daily with his family. Manage debts, pay bills, and navigate challenges including a friend's gambling addiction.",
+    tags: ["Game", "Survival", "Comic Style", "Resource Management"],
     link: "https://buhaypedro.vercel.app/",
     featured: true,
     video: "/projects/buhaypedro.mp4",
