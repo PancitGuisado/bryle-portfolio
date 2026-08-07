@@ -9,7 +9,7 @@ export default function ProjectsSection() {
 
   return (
     <section id="projects" className="py-32 px-6">
-      <div ref={revealRef} className="section-reveal stagger-parent mx-auto max-w-4xl">
+      <div ref={revealRef} className="section-reveal stagger-parent mx-auto max-w-6xl">
         <div className="text-center">
           <p className="text-sm font-semibold uppercase tracking-[0.2em] text-primary">Projects</p>
           <h2 className="mt-3 font-display text-3xl font-bold tracking-tight text-foreground sm:text-4xl text-balance">
@@ -17,8 +17,8 @@ export default function ProjectsSection() {
           </h2>
         </div>
 
-        <div className="mt-14 space-y-5">
-          {projects.slice(0, 3).map((project, i) => (
+        <div className="mt-14 grid grid-cols-1 lg:grid-cols-2 gap-6">
+          {projects.slice(0, 4).map((project, i) => (
             <ProjectCard key={project.title} project={project} index={i} />
           ))}
         </div>

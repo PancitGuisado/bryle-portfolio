@@ -19,7 +19,7 @@ export default function Projects() {
       <Navbar />
       
       <main className="flex-1 pt-32 pb-24 px-6">
-        <div ref={revealRef} className="section-reveal stagger-parent mx-auto max-w-4xl">
+        <div ref={revealRef} className="section-reveal stagger-parent mx-auto max-w-6xl">
           <div className="mb-12">
             <Link
               to="/"
@@ -38,7 +38,7 @@ export default function Projects() {
             </p>
           </div>
           
-          <div className="space-y-5">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
             {projects.map((project, i) => (
               <ProjectCard key={project.title} project={project} index={i} />
             ))}

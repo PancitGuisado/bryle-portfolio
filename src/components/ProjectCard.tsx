@@ -66,7 +66,7 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
           </div>
         )}
 
-        <div className="flex flex-col gap-6 sm:flex-row sm:items-start sm:justify-between">
+        <div className="flex flex-col gap-6">
           <div className="flex-1">
             <h3 className="font-display text-xl font-bold text-foreground sm:text-2xl">
               {project.title}
@@ -86,7 +86,7 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
             </div>
           </div>
 
-          <div className="flex shrink-0 items-center gap-2">
+          <div className="flex items-center gap-2">
             {project.github ? (
               <a
                 href={project.github}
