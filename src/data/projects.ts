@@ -11,6 +11,14 @@ export interface Project {
 
 export const projects: Project[] = [
   {
+    title: "AIPixelCraft",
+    description: "An AI-powered pixel art and sprite editor that lets users create, edit, and generate sprite sheets or pixel art assets using artificial intelligence.",
+    tags: ["AI", "Pixel Art", "Sprite Editor", "Game Dev"],
+    link: "https://aipixelcraft.vercel.app/",
+    featured: true,
+    video: "/projects/aipixelcraft.mp4",
+  },
+  {
     title: "Kanibalismo",
     description: "A 2D single-player survival sandbox game featuring a day and night cycle, crafting, and building mechanics.",
     tags: ["Game", "Survival", "Sandbox", "2D"],
