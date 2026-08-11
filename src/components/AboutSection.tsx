@@ -11,7 +11,7 @@ const highlights = [
   {
     icon: Briefcase,
     title: "What I Do",
-    text: "Full-stack development with React, TypeScript, Node.js, Express, PostgreSQL, and MySQL focused on performance, accessibility, and maintainable architecture.",
+    text: "Full-stack development with React, TypeScript, Node.js, Express, PHP, PostgreSQL, and MySQL focused on performance, accessibility, and maintainable architecture.",
   },
   {
     icon: GraduationCap,

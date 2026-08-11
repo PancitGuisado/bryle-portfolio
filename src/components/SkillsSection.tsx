@@ -6,6 +6,7 @@ import { useEffect, useState } from "react";
 const techStack = [
   { name: "JavaScript", type: "image", src: "https://cdn.simpleicons.org/javascript/F7DF1E" },
   { name: "Python", type: "image", src: "https://cdn.simpleicons.org/python/3776AB" },
+  { name: "PHP", type: "image", src: "https://cdn.simpleicons.org/php/777BB4" },
   { name: "React", type: "image", src: "https://cdn.simpleicons.org/react/61DAFB" },
   { name: "TypeScript", type: "image", src: "https://cdn.simpleicons.org/typescript/3178C6" },
   { name: "MySQL", type: "image", src: "https://cdn.simpleicons.org/mysql/4479A1" },
