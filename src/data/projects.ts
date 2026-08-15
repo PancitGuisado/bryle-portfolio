@@ -4,12 +4,22 @@ export interface Project {
   tags: string[];
   link?: string;
   github?: string;
+  download?: string;
   featured: boolean;
   video?: string;
   image?: string;
 }
 
 export const projects: Project[] = [
+  {
+    title: "The Signal",
+    description: "A 2D pixel-art top-down sideview tower defense survival game. Built as an Android app using Capacitor, you must build defenses, manage resources, and survive the waves.",
+    tags: ["Game", "Tower Defense", "Survival", "2D", "Android", "Capacitor"],
+    github: "https://github.com/PancitGuisado/TheSignal",
+    download: "/projects/TheSignal.apk",
+    featured: true,
+    image: "/projects/thesignal.png",
+  },
   {
     title: "AIPixelCraft",
     description: "An AI-powered pixel art and sprite editor that lets users create, edit, and generate sprite sheets or pixel art assets using artificial intelligence.",

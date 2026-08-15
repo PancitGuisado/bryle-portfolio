@@ -1,4 +1,4 @@
-import { Github, ArrowUpRight } from "lucide-react";
+import { Github, ArrowUpRight, Download } from "lucide-react";
 import { Project } from "@/data/projects";
 import { useRef } from "react";
 
@@ -109,7 +109,17 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
                 <ArrowUpRight className="h-4 w-4" />
               </a>
             ) : null}
-            {!project.github && !project.link ? (
+            {project.download ? (
+              <a
+                href={project.download}
+                download
+                className="flex h-10 w-10 items-center justify-center rounded-xl border border-border text-muted-foreground transition-all hover:border-primary/30 hover:bg-secondary hover:text-foreground hover:shadow-sm active:scale-95"
+                aria-label={`Download ${project.title} APK`}
+              >
+                <Download className="h-4 w-4" />
+              </a>
+            ) : null}
+            {!project.github && !project.link && !project.download ? (
               <span className="text-xs font-medium uppercase tracking-[0.16em] text-muted-foreground/80">
                 Link coming soon
               </span>
