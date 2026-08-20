@@ -95,4 +95,11 @@ export const projects: Project[] = [
     featured: true,
     video: "/projects/perfumereco.mp4",
   },
+  {
+    title: "Payroll System",
+    description: "A payroll management system.",
+    tags: ["Payroll", "System", "Management"],
+    github: "https://github.com/PancitGuisado/Payroll.git",
+    featured: false,
+  },
 ];
