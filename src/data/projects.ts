@@ -33,7 +33,7 @@ export const projects: Project[] = [
     description: "A 2D single-player survival sandbox game featuring a day and night cycle, crafting, and building mechanics.",
     tags: ["Game", "Survival", "Sandbox", "2D"],
     link: "https://kanibalismo.vercel.app/",
-    featured: true,
+    featured: false,
     video: "/projects/kanibalismo.mp4",
   },
   {
@@ -84,7 +84,7 @@ export const projects: Project[] = [
     description: "A comic-style survival game about Pedro, a lower-class Filipino trying to survive daily with his family. Manage debts, pay bills, and navigate challenges including a friend's gambling addiction.",
     tags: ["Game", "Survival", "Comic Style", "Resource Management"],
     link: "https://buhaypedro.vercel.app/",
-    featured: true,
+    featured: false,
     video: "/projects/buhaypedro.mp4",
   },
   {
@@ -92,7 +92,7 @@ export const projects: Project[] = [
     description: "A personalized fragrance recommendation platform helping users discover their ideal scent profiles.",
     tags: ["Recommendation", "Lifestyle", "Web App"],
     link: "https://perfumereco.vercel.app/",
-    featured: true,
+    featured: false,
     video: "/projects/perfumereco.mp4",
   },
   {
