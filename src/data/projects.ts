@@ -13,8 +13,8 @@ export interface Project {
 export const projects: Project[] = [
   {
     title: "The Signal",
-    description: "A 2D pixel-art top-down sideview tower defense survival game. Built as an Android app using Capacitor, you must build defenses, manage resources, and survive the waves.",
-    tags: ["Game", "Tower Defense", "Survival", "2D", "Android", "Capacitor"],
+    description: "A 2D pixel-art top-down sideview tower defense survival game where you must build defenses, manage resources, and survive the waves.",
+    tags: ["Game", "Tower Defense", "Survival", "2D"],
     github: "https://github.com/PancitGuisado/TheSignal",
     link: "https://thesignalgame.vercel.app/",
     featured: true,
