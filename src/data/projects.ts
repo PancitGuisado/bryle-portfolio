@@ -102,4 +102,11 @@ export const projects: Project[] = [
     github: "https://github.com/PancitGuisado/Payroll.git",
     featured: false,
   },
+  {
+    title: "Chesster",
+    description: "A chess analysis system.",
+    tags: ["Chess", "Analysis", "Tool"],
+    github: "https://github.com/PancitGuisado/chesster",
+    featured: false,
+  },
 ];
