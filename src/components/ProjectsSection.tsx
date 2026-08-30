@@ -18,7 +18,7 @@ export default function ProjectsSection() {
         </div>
 
         <div className="mt-14 grid grid-cols-1 lg:grid-cols-2 gap-6">
-          {projects.slice(0, 4).map((project, i) => (
+          {projects.filter(project => project.featured).map((project, i) => (
             <ProjectCard key={project.title} project={project} index={i} />
           ))}
         </div>
