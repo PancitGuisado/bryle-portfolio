@@ -1,11 +1,12 @@
 import { ArrowDown, Code2, Sparkles } from "lucide-react";
 import { useParallax } from "@/hooks/useParallax";
 import { useMousePosition } from "@/hooks/useMousePosition";
+import { use3DTilt } from "@/hooks/use3DTilt";
 
 export default function HeroSection() {
   const parallaxRef = useParallax(0.12);
   const parallaxRef2 = useParallax(-0.08);
-  const portraitParallaxRef = useParallax(0.05);
+  const portraitRef = use3DTilt(10, 1.03);
   const mouse = useMousePosition();
 
   const moveX = (mouse.x / window.innerWidth - 0.5) * 20;
@@ -120,10 +121,11 @@ export default function HeroSection() {
         </div>
 
         <div
-          ref={portraitParallaxRef}
-          className="relative mx-auto w-full max-w-sm opacity-0 animate-fade-up"
+          ref={portraitRef}
+          className="relative mx-auto w-full max-w-sm opacity-0 animate-fade-up group cursor-pointer"
           style={{ animationDelay: "0.3s" }}
         >
+          <div className="card-glare pointer-events-none absolute inset-0 z-30 transition-opacity duration-300 opacity-0 group-hover:opacity-100 rounded-full" />
           <div className="absolute inset-x-12 top-10 h-[78%] rounded-full bg-primary/15 blur-3xl" />
           <img
             src="/bryle-portrait.png"

@@ -2,6 +2,7 @@ import { useScrollReveal } from "@/hooks/useScrollReveal";
 import { Rocket, Code2, Brain } from "lucide-react";
 import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
+import { use3DTilt } from "@/hooks/use3DTilt";
 
 const techStack = [
   { name: "JavaScript", type: "image", src: "https://cdn.simpleicons.org/javascript/F7DF1E" },
@@ -23,6 +24,28 @@ const techStack = [
   { name: "Antigravity", type: "icon", icon: Rocket, color: "text-purple-500" },
   { name: "Codex", type: "icon", icon: Brain, color: "text-blue-500" },
 ];
+
+function SkillCard({ tech, isDark }: { tech: any; isDark: boolean }) {
+  const cardRef = use3DTilt(12, 1.04);
+  return (
+    <div
+      ref={cardRef}
+      className="card-dynamic aspect-square rounded-2xl flex items-center justify-center p-4 bg-background/50 hover:bg-secondary/30 transition-all border border-border/50 group relative overflow-hidden cursor-pointer"
+      title={tech.name}
+    >
+      <div className="card-glare pointer-events-none absolute inset-0 z-30 transition-opacity duration-300 opacity-0 group-hover:opacity-100" />
+      {tech.type === "image" ? (
+        <img
+          src={isDark && tech.darkSrc ? tech.darkSrc : tech.src}
+          alt={tech.name}
+          className="w-12 h-12 object-contain transition-transform group-hover:scale-110"
+        />
+      ) : tech.icon ? (
+        <tech.icon className={`w-12 h-12 ${tech.color} transition-transform group-hover:scale-110`} />
+      ) : null}
+    </div>
+  );
+}
 
 export default function SkillsSection() {
   const revealRef = useScrollReveal();
@@ -50,21 +73,7 @@ export default function SkillsSection() {
 
         <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 gap-4 md:gap-6">
           {techStack.map((tech) => (
-            <div 
-              key={tech.name} 
-              className="card-dynamic aspect-square rounded-2xl flex items-center justify-center p-4 bg-background/50 hover:bg-secondary/50 transition-colors border border-border/50 group"
-              title={tech.name}
-            >
-              {tech.type === "image" ? (
-                <img 
-                  src={isDark && tech.darkSrc ? tech.darkSrc : tech.src} 
-                  alt={tech.name} 
-                  className="w-12 h-12 object-contain transition-transform group-hover:scale-110"
-                />
-              ) : tech.icon ? (
-                <tech.icon className={`w-12 h-12 ${tech.color} transition-transform group-hover:scale-110`} />
-              ) : null}
-            </div>
+            <SkillCard key={tech.name} tech={tech} isDark={isDark} />
           ))}
         </div>
       </div>
