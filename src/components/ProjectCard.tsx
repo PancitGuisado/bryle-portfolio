@@ -1,6 +1,7 @@
 import { Github, ArrowUpRight, Download } from "lucide-react";
 import { Project } from "@/data/projects";
 import { useRef } from "react";
+import { use3DTilt } from "@/hooks/use3DTilt";
 
 interface ProjectCardProps {
   project: Project;
@@ -9,7 +10,7 @@ interface ProjectCardProps {
 
 export function ProjectCard({ project, index }: ProjectCardProps) {
   const videoRef = useRef<HTMLVideoElement>(null);
-  const cardRef = useRef<HTMLDivElement>(null);
+  const cardRef = use3DTilt(8, 1.01);
 
   const handleMouseEnter = () => {
     if (videoRef.current) {
@@ -19,45 +20,9 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
     }
   };
 
-  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
-    const card = cardRef.current;
-    if (!card) return;
-
-    const rect = card.getBoundingClientRect();
-    const x = e.clientX - rect.left;
-    const y = e.clientY - rect.top;
-
-    const xc = rect.width / 2;
-    const yc = rect.height / 2;
-
-    const rotateX = -(y - yc) / (rect.height / 8);
-    const rotateY = (x - xc) / (rect.width / 8);
-
-    // Disable transition during movement for real-time tracking, then apply transform
-    card.style.transition = "none";
-    card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.01, 1.01, 1.01)`;
-
-    const glare = card.querySelector(".card-glare") as HTMLDivElement;
-    if (glare) {
-      glare.style.background = `radial-gradient(circle at ${x}px ${y}px, rgba(255, 255, 255, 0.08) 0%, transparent 60%)`;
-    }
-  };
-
   const handleMouseLeave = () => {
     if (videoRef.current) {
       videoRef.current.pause();
-    }
-
-    const card = cardRef.current;
-    if (!card) return;
-
-    // Restore smooth transition when restoring layout
-    card.style.transition = "transform 0.5s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.5s ease";
-    card.style.transform = `perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)`;
-
-    const glare = card.querySelector(".card-glare") as HTMLDivElement;
-    if (glare) {
-      glare.style.background = "transparent";
     }
   };
 
@@ -69,10 +34,8 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
       }`}
       style={{
         transitionDelay: `${index * 120 + 150}ms`,
-        transformStyle: "preserve-3d",
       }}
       onMouseEnter={handleMouseEnter}
-      onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
     >
       {/* Glare effect overlay */}
