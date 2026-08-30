@@ -16,9 +16,9 @@ export const projects: Project[] = [
     description: "A 2D pixel-art top-down sideview tower defense survival game. Built as an Android app using Capacitor, you must build defenses, manage resources, and survive the waves.",
     tags: ["Game", "Tower Defense", "Survival", "2D", "Android", "Capacitor"],
     github: "https://github.com/PancitGuisado/TheSignal",
-    download: "/projects/TheSignal.apk",
+    link: "https://thesignalgame.vercel.app/",
     featured: true,
-    image: "/projects/thesignal.png",
+    video: "/projects/thesignal.mp4",
   },
   {
     title: "AIPixelCraft",
