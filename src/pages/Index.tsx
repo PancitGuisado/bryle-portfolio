@@ -5,13 +5,15 @@ import SkillsSection from "@/components/SkillsSection";
 import ProjectsSection from "@/components/ProjectsSection";
 import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
+import ThreeDBackground from "@/components/ThreeDBackground";
 import { useAcceleratedScroll } from "@/hooks/useAcceleratedScroll";
 
 const Index = () => {
   useAcceleratedScroll();
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background relative overflow-hidden">
+      <ThreeDBackground />
       <Navbar />
       <HeroSection />
       <AboutSection />

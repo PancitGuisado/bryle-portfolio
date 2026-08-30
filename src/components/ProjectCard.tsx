@@ -9,6 +9,7 @@ interface ProjectCardProps {
 
 export function ProjectCard({ project, index }: ProjectCardProps) {
   const videoRef = useRef<HTMLVideoElement>(null);
+  const cardRef = useRef<HTMLDivElement>(null);
 
   const handleMouseEnter = () => {
     if (videoRef.current) {
@@ -18,23 +19,64 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
     }
   };
 
+  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+    const card = cardRef.current;
+    if (!card) return;
+
+    const rect = card.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+
+    const xc = rect.width / 2;
+    const yc = rect.height / 2;
+
+    const rotateX = -(y - yc) / (rect.height / 8);
+    const rotateY = (x - xc) / (rect.width / 8);
+
+    // Disable transition during movement for real-time tracking, then apply transform
+    card.style.transition = "none";
+    card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.01, 1.01, 1.01)`;
+
+    const glare = card.querySelector(".card-glare") as HTMLDivElement;
+    if (glare) {
+      glare.style.background = `radial-gradient(circle at ${x}px ${y}px, rgba(255, 255, 255, 0.08) 0%, transparent 60%)`;
+    }
+  };
+
   const handleMouseLeave = () => {
     if (videoRef.current) {
       videoRef.current.pause();
-      // Optional: rewind to start
-      // videoRef.current.currentTime = 0;
+    }
+
+    const card = cardRef.current;
+    if (!card) return;
+
+    // Restore smooth transition when restoring layout
+    card.style.transition = "transform 0.5s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.5s ease";
+    card.style.transform = `perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)`;
+
+    const glare = card.querySelector(".card-glare") as HTMLDivElement;
+    if (glare) {
+      glare.style.background = "transparent";
     }
   };
 
   return (
     <div
-      className={`card-dynamic stagger-child group relative flex flex-col overflow-hidden rounded-2xl ${
+      ref={cardRef}
+      className={`card-dynamic stagger-child group relative flex flex-col overflow-hidden rounded-2xl border border-border/40 bg-card/40 backdrop-blur-md shadow-lg transition-all duration-300 hover:shadow-2xl hover:border-primary/20 ${
         project.featured ? "sm:p-0" : "p-0"
       }`}
-      style={{ transitionDelay: `${index * 120 + 150}ms` }}
+      style={{
+        transitionDelay: `${index * 120 + 150}ms`,
+        transformStyle: "preserve-3d",
+      }}
       onMouseEnter={handleMouseEnter}
+      onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
     >
+      {/* Glare effect overlay */}
+      <div className="card-glare pointer-events-none absolute inset-0 z-30 transition-opacity duration-300 opacity-0 group-hover:opacity-100" />
       {/* Media Section */}
       {(project.video || project.image) && (
         <div className="relative aspect-video w-full overflow-hidden bg-muted border-b border-border">
