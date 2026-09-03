@@ -17,6 +17,7 @@ export const projects: Project[] = [
     tags: ["Game", "Tower Defense", "Survival", "2D"],
     github: "https://github.com/PancitGuisado/TheSignal",
     link: "https://thesignalgame.vercel.app/",
+    download: "/projects/TheSignal.apk",
     featured: true,
     video: "/projects/thesignal.mp4",
   },
