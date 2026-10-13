@@ -12,6 +12,14 @@ export interface Project {
 
 export const projects: Project[] = [
   {
+    title: "Huling Klase",
+    description: "A Filipino psychological horror story and interactive investigation game. Thirty-nine students. Forty names answered.",
+    tags: ["Game", "Psychological Horror", "Interactive Story", "Detective"],
+    link: "https://hulingklase.vercel.app/",
+    featured: true,
+    image: "/projects/hulingklase.png",
+  },
+  {
     title: "Snapmimi",
     description: "A free online photobooth web application designed to capture, customize, and cherish cute photostrips and little moments.",
     tags: ["Photobooth", "Web App", "Camera", "Creative"],
