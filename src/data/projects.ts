@@ -12,6 +12,14 @@ export interface Project {
 
 export const projects: Project[] = [
   {
+    title: "Snapmimi",
+    description: "A free online photobooth web application designed to capture, customize, and cherish cute photostrips and little moments.",
+    tags: ["Photobooth", "Web App", "Camera", "Creative"],
+    link: "https://snapmimi.vercel.app/",
+    featured: true,
+    image: "/projects/snapmimi.png",
+  },
+  {
     title: "The Signal",
     description: "A 2D pixel-art top-down sideview tower defense survival game where you must build defenses, manage resources, and survive the waves.",
     tags: ["Game", "Tower Defense", "Survival", "2D"],
