@@ -12,28 +12,13 @@ export interface Project {
 
 export const projects: Project[] = [
   {
-    title: "Virtual Arduino: Calculator & Smoke Detector",
-    description: "A dual-function virtual Arduino simulation built in Tinkercad featuring an interactive keypad calculator and an automated smoke detection alarm system with real-time buzzer and LED indicators.",
-    tags: ["Arduino", "Tinkercad", "Embedded Systems", "Simulation"],
-    link: "https://www.tinkercad.com/things/4PtQzAUAURA-surprising-elzing",
+    title: "EduBridge",
+    description:
+      "EduBridge is an educational platform that integrates artificial intelligence with structured learning to improve how students study and how teachers manage their classes.",
+    tags: ["Educational Platform", "Artificial Intelligence", "Structured Learning"],
+    link: "https://edubridgeorg.vercel.app/",
     featured: true,
-    image: "/projects/virtual-arduino.png",
-  },
-  {
-    title: "Huling Klase",
-    description: "A Filipino psychological horror story and interactive investigation game. Thirty-nine students. Forty names answered.",
-    tags: ["Game", "Psychological Horror", "Interactive Story", "Detective"],
-    link: "https://hulingklase.vercel.app/",
-    featured: true,
-    image: "/projects/hulingklase.png",
-  },
-  {
-    title: "Snapmimi",
-    description: "A free online photobooth web application designed to capture, customize, and cherish cute photostrips and little moments.",
-    tags: ["Photobooth", "Web App", "Camera", "Creative"],
-    link: "https://snapmimi.vercel.app/",
-    featured: true,
-    image: "/projects/snapmimi.png",
+    video: "/projects/edubridge.mp4",
   },
   {
     title: "The Signal",
@@ -46,6 +31,15 @@ export const projects: Project[] = [
     video: "/projects/thesignal.mp4",
   },
   {
+    title: "Resumaker",
+    description:
+      "An AI-powered resume builder that helps users create professional, polished resumes effortlessly with smart formatting and content suggestions.",
+    tags: ["AI", "Resume Builder", "Productivity", "Web App"],
+    link: "https://airesumaker.vercel.app/",
+    featured: true,
+    video: "/projects/resumaker.mp4",
+  },
+  {
     title: "AIPixelCraft",
     description: "An AI-powered pixel art and sprite editor that lets users create, edit, and generate sprite sheets or pixel art assets using artificial intelligence.",
     tags: ["AI", "Pixel Art", "Sprite Editor", "Game Dev"],
@@ -54,30 +48,36 @@ export const projects: Project[] = [
     video: "/projects/aipixelcraft.mp4",
   },
   {
+    title: "Virtual Arduino: Calculator & Smoke Detector",
+    description: "A dual-function virtual Arduino simulation built in Tinkercad featuring an interactive keypad calculator and an automated smoke detection alarm system with real-time buzzer and LED indicators.",
+    tags: ["Arduino", "Tinkercad", "Embedded Systems", "Simulation"],
+    link: "https://www.tinkercad.com/things/4PtQzAUAURA-surprising-elzing",
+    featured: false,
+    image: "/projects/virtual-arduino.png",
+  },
+  {
+    title: "Huling Klase",
+    description: "A Filipino psychological horror story and interactive investigation game. Thirty-nine students. Forty names answered.",
+    tags: ["Game", "Psychological Horror", "Interactive Story", "Detective"],
+    link: "https://hulingklase.vercel.app/",
+    featured: false,
+    image: "/projects/hulingklase.png",
+  },
+  {
+    title: "Snapmimi",
+    description: "A free online photobooth web application designed to capture, customize, and cherish cute photostrips and little moments.",
+    tags: ["Photobooth", "Web App", "Camera", "Creative"],
+    link: "https://snapmimi.vercel.app/",
+    featured: false,
+    image: "/projects/snapmimi.png",
+  },
+  {
     title: "Kanibalismo",
     description: "A 2D single-player survival sandbox game featuring a day and night cycle, crafting, and building mechanics.",
     tags: ["Game", "Survival", "Sandbox", "2D"],
     link: "https://kanibalismo.vercel.app/",
     featured: false,
     video: "/projects/kanibalismo.mp4",
-  },
-  {
-    title: "EduBridge",
-    description:
-      "EduBridge is an educational platform that integrates artificial intelligence with structured learning to improve how students study and how teachers manage their classes.",
-    tags: ["Educational Platform", "Artificial Intelligence", "Structured Learning"],
-    link: "https://edubridgeorg.vercel.app/",
-    featured: true,
-    video: "/projects/edubridge.mp4",
-  },
-  {
-    title: "Resumaker",
-    description:
-      "An AI-powered resume builder that helps users create professional, polished resumes effortlessly with smart formatting and content suggestions.",
-    tags: ["AI", "Resume Builder", "Productivity", "Web App"],
-    link: "https://airesumaker.vercel.app/",
-    featured: true,
-    video: "/projects/resumaker.mp4",
   },
   {
     title: "Mocha Moments",

@@ -1,5 +1,4 @@
 import ThemeToggle from "./ThemeToggle";
-import SpotifyWidget from "./SpotifyWidget";
 import MusicWidget from "./MusicWidget";
 import { useState, useEffect, useCallback } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
@@ -94,7 +93,6 @@ export default function Navbar() {
           ))}
           <div className="ml-4 flex items-center gap-2">
             <MusicWidget />
-            <SpotifyWidget />
             <ThemeToggle />
           </div>
         </div>
@@ -102,7 +100,6 @@ export default function Navbar() {
         {/* Mobile */}
         <div className="flex items-center gap-2 md:hidden">
           <MusicWidget />
-          <SpotifyWidget />
           <ThemeToggle />
           <button
             onClick={() => setOpen(!open)}

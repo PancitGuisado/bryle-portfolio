@@ -1,4 +1,4 @@
-import { ArrowDown, Code2, Sparkles } from "lucide-react";
+import { ArrowDown, Code2, Sparkles, Download } from "lucide-react";
 import { useParallax } from "@/hooks/useParallax";
 import { useMousePosition } from "@/hooks/useMousePosition";
 import { use3DTilt } from "@/hooks/use3DTilt";
@@ -92,6 +92,14 @@ export default function HeroSection() {
             >
               <span className="relative z-10">View Projects</span>
               <div className="absolute inset-0 bg-foreground/10 opacity-0 transition-opacity group-hover:opacity-100" />
+            </a>
+            <a
+              href="/Bryle-James-Agra-CV.pdf"
+              download="Bryle James Agra.pdf"
+              className="inline-flex h-12 items-center gap-2 rounded-xl border border-border bg-card px-6 text-sm font-semibold text-foreground shadow-sm transition-all hover:border-primary/30 hover:bg-secondary hover:shadow-md active:scale-[0.97]"
+            >
+              <Download className="h-4 w-4 text-primary" />
+              Download CV
             </a>
             <a
               href="#contact"
