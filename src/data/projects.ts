@@ -12,6 +12,14 @@ export interface Project {
 
 export const projects: Project[] = [
   {
+    title: "Virtual Arduino: Calculator & Smoke Detector",
+    description: "A dual-function virtual Arduino simulation built in Tinkercad featuring an interactive keypad calculator and an automated smoke detection alarm system with real-time buzzer and LED indicators.",
+    tags: ["Arduino", "Tinkercad", "Embedded Systems", "Simulation"],
+    link: "https://www.tinkercad.com/things/4PtQzAUAURA-surprising-elzing",
+    featured: true,
+    image: "/projects/virtual-arduino.png",
+  },
+  {
     title: "Huling Klase",
     description: "A Filipino psychological horror story and interactive investigation game. Thirty-nine students. Forty names answered.",
     tags: ["Game", "Psychological Horror", "Interactive Story", "Detective"],
