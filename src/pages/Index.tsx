@@ -21,7 +21,6 @@ import {
 } from "lucide-react";
 import { projects, Project } from "@/data/projects";
 import ThemeToggle from "@/components/ThemeToggle";
-import MusicWidget from "@/components/MusicWidget";
 import ThreeDBackground from "@/components/ThreeDBackground";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog";
 
@@ -201,7 +200,6 @@ export default function Index() {
             </button>
 
             <div className="h-5 w-px bg-border/80 mx-0.5" />
-            <MusicWidget />
             <ThemeToggle />
           </div>
         </header>
