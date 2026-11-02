@@ -17,6 +17,7 @@ import {
   ArrowUpRight,
   Play,
   Terminal,
+  Wrench,
 } from "lucide-react";
 import { projects, Project } from "@/data/projects";
 import ThemeToggle from "@/components/ThemeToggle";
@@ -26,45 +27,53 @@ import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } f
 
 type CategoryFilter = "all" | "agentic" | "automation" | "webapp";
 
+interface SkillPillar {
+  id: "agentic" | "automation" | "webapp";
+  title: string;
+  focus: string;
+  icon: any;
+  accent: string;
+  badgeBg: string;
+  skills: string[];
+  tools: string[];
+}
+
 export default function Index() {
   const [selectedCategory, setSelectedCategory] = useState<CategoryFilter>("all");
   const [searchQuery, setSearchQuery] = useState("");
   const [activeProject, setActiveProject] = useState<Project | null>(null);
   const [copiedEmail, setCopiedEmail] = useState(false);
 
-  const pillars = [
+  const pillars: SkillPillar[] = [
     {
-      id: "agentic" as const,
+      id: "agentic",
       title: "Agentic Coding",
-      subtitle: "Autonomous AI & LLM Systems",
+      focus: "Autonomous AI & Intelligent Systems",
       icon: Bot,
-      count: projects.filter((p) => p.category === "agentic").length,
-      desc: "Prompt chaining, reasoning loops, AI canvas engines & generative apps",
-      gradient: "from-blue-500/20 via-indigo-500/10 to-transparent",
-      accent: "text-blue-500 border-blue-500/30 bg-blue-500/10",
-      activeRing: "ring-blue-500/40 border-blue-500/60 bg-blue-500/5",
+      accent: "text-blue-500 border-blue-500/30",
+      badgeBg: "bg-blue-500/10 text-blue-600 dark:text-blue-400 border-blue-500/20",
+      skills: ["Agent Workflows", "LLM Pipelines", "Prompt Chaining", "Canvas Rendering", "Synthetic Data"],
+      tools: ["Gemini API", "OpenAI / Claude", "Antigravity", "Codex", "LangChain"],
     },
     {
-      id: "automation" as const,
+      id: "automation",
       title: "Automations",
-      subtitle: "Workflows & Background Logic",
+      focus: "System Workflows & Background Logic",
       icon: Cpu,
-      count: projects.filter((p) => p.category === "automation").length,
-      desc: "Order workflows, payroll engines, embedded simulations & task pipelines",
-      gradient: "from-emerald-500/20 via-teal-500/10 to-transparent",
-      accent: "text-emerald-500 border-emerald-500/30 bg-emerald-500/10",
-      activeRing: "ring-emerald-500/40 border-emerald-500/60 bg-emerald-500/5",
+      accent: "text-emerald-500 border-emerald-500/30",
+      badgeBg: "bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border-emerald-500/20",
+      skills: ["Task Scheduling", "Order Queues", "Payroll Engines", "IoT / Simulation", "Batch ETL"],
+      tools: ["Python", "Node.js", "Express", "Tinkercad", "Arduino / C++"],
     },
     {
-      id: "webapp" as const,
+      id: "webapp",
       title: "Web App Development",
-      subtitle: "Full-Stack & Interactive Games",
+      focus: "Full-Stack Products & Interactive Experiences",
       icon: Globe,
-      count: projects.filter((p) => p.category === "webapp" || p.category === "game").length,
-      desc: "Clean performant UI/UX, responsive state management & game engines",
-      gradient: "from-violet-500/20 via-purple-500/10 to-transparent",
-      accent: "text-violet-500 border-violet-500/30 bg-violet-500/10",
-      activeRing: "ring-violet-500/40 border-violet-500/60 bg-violet-500/5",
+      accent: "text-violet-500 border-violet-500/30",
+      badgeBg: "bg-violet-500/10 text-violet-600 dark:text-violet-400 border-violet-500/20",
+      skills: ["Frontend UI/UX", "REST APIs", "State Architectures", "2D Game Engines", "Responsive Web"],
+      tools: ["React", "TypeScript", "Tailwind CSS", "PHP / MySQL", "Supabase"],
     },
   ];
 
@@ -98,7 +107,7 @@ export default function Index() {
       {/* Dynamic 3D interactive particle background */}
       <ThreeDBackground />
 
-      {/* Subtle controlled glow accents without blowing out */}
+      {/* Subtle controlled glow accents */}
       <div className="pointer-events-none fixed -top-40 -left-20 h-80 w-80 rounded-full bg-primary/10 blur-[100px]" />
       <div className="pointer-events-none fixed -bottom-40 -right-20 h-80 w-80 rounded-full bg-primary/10 blur-[100px]" />
 
@@ -134,11 +143,11 @@ export default function Index() {
                 </span>
               </div>
               <p className="text-xs sm:text-sm text-muted-foreground flex items-center gap-2 font-medium mt-1">
-                <span className="hover:text-foreground transition-colors">Agentic Coding</span>
+                <span>Agentic Coding</span>
                 <span className="text-border">•</span>
-                <span className="hover:text-foreground transition-colors">Automations</span>
+                <span>Automations</span>
                 <span className="text-border">•</span>
-                <span className="hover:text-foreground transition-colors">Web App Development</span>
+                <span>Web App Development</span>
               </p>
             </div>
           </div>
@@ -197,55 +206,70 @@ export default function Index() {
           </div>
         </header>
 
-        {/* ================= CORE PILLARS (INTERACTIVE HIGHLIGHT CARDS) ================= */}
+        {/* ================= SKILLS, TOOLS & CAPABILITIES (DISPLAY CARDS - NOT BUTTONS) ================= */}
         <section className="grid grid-cols-1 sm:grid-cols-3 gap-2.5 sm:gap-3">
           {pillars.map((pillar) => {
             const Icon = pillar.icon;
-            const isSelected = selectedCategory === pillar.id;
             return (
-              <button
+              <div
                 key={pillar.id}
-                onClick={() => setSelectedCategory(isSelected ? "all" : pillar.id)}
-                className={`group relative overflow-hidden rounded-2xl border p-3.5 text-left transition-all duration-300 backdrop-blur-xl active:scale-[0.99] ${
-                  isSelected
-                    ? `${pillar.activeRing} ring-2 shadow-md bg-card`
-                    : "border-border/70 bg-card/70 hover:border-border hover:bg-card/95 hover:shadow-xs"
-                }`}
+                className="relative overflow-hidden rounded-2xl border border-border/70 bg-card/80 p-3.5 sm:p-4 backdrop-blur-xl shadow-xs transition-colors hover:border-border hover:bg-card/95"
               >
-                <div className="flex items-start justify-between gap-3">
-                  <div className="flex items-start gap-3 min-w-0">
-                    <div
-                      className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border ${pillar.accent} transition-transform group-hover:scale-105 shadow-xs`}
-                    >
-                      <Icon className="h-5 w-5" />
-                    </div>
-                    <div className="min-w-0">
-                      <div className="flex items-center gap-2">
-                        <h3 className="text-sm font-bold text-foreground truncate">
-                          {pillar.title}
-                        </h3>
-                        <span className="rounded-full bg-secondary px-2 py-0.5 text-[10px] font-semibold text-muted-foreground font-mono">
-                          {pillar.count}
+                {/* Header */}
+                <div className="flex items-center gap-3 mb-2.5">
+                  <div
+                    className={`flex h-9 w-9 shrink-0 items-center justify-center rounded-xl border ${pillar.accent} ${pillar.badgeBg} shadow-xs`}
+                  >
+                    <Icon className="h-4.5 w-4.5" />
+                  </div>
+                  <div className="min-w-0">
+                    <h3 className="text-sm font-bold text-foreground truncate">
+                      {pillar.title}
+                    </h3>
+                    <p className="text-[11px] font-medium text-muted-foreground truncate">
+                      {pillar.focus}
+                    </p>
+                  </div>
+                </div>
+
+                {/* Skills Line */}
+                <div className="space-y-2 pt-1 border-t border-border/50">
+                  <div>
+                    <span className="text-[10px] font-bold uppercase tracking-wider text-muted-foreground flex items-center gap-1 mb-1">
+                      <Code2 className="h-3 w-3 text-primary" />
+                      Core Competencies
+                    </span>
+                    <div className="flex flex-wrap gap-1">
+                      {pillar.skills.map((skill) => (
+                        <span
+                          key={skill}
+                          className="rounded-md border border-border/60 bg-secondary/50 px-1.5 py-0.5 text-[10px] font-medium text-foreground/80"
+                        >
+                          {skill}
                         </span>
-                      </div>
-                      <p className="text-[11px] font-medium text-foreground/75 truncate mt-0.5">
-                        {pillar.subtitle}
-                      </p>
-                      <p className="text-[11px] text-muted-foreground line-clamp-1 mt-0.5">
-                        {pillar.desc}
-                      </p>
+                      ))}
                     </div>
                   </div>
 
-                  <span
-                    className={`mt-1 flex h-2 w-2 shrink-0 rounded-full transition-all ${
-                      isSelected
-                        ? "bg-primary scale-125 ring-4 ring-primary/20"
-                        : "bg-border group-hover:bg-primary/50"
-                    }`}
-                  />
+                  {/* Tools Line */}
+                  <div>
+                    <span className="text-[10px] font-bold uppercase tracking-wider text-muted-foreground flex items-center gap-1 mb-1">
+                      <Wrench className="h-3 w-3 text-primary" />
+                      Tools & Stack
+                    </span>
+                    <div className="flex flex-wrap gap-1">
+                      {pillar.tools.map((tool) => (
+                        <span
+                          key={tool}
+                          className={`rounded-md border px-1.5 py-0.5 text-[10px] font-semibold ${pillar.badgeBg}`}
+                        >
+                          {tool}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
                 </div>
-              </button>
+              </div>
             );
           })}
         </section>
@@ -260,7 +284,7 @@ export default function Index() {
               </div>
               <div>
                 <h2 className="text-xs sm:text-sm font-bold tracking-tight text-foreground uppercase">
-                  Featured Works & Projects
+                  Projects Showcase
                 </h2>
               </div>
               <span className="rounded-md bg-secondary px-2 py-0.5 text-[11px] font-semibold text-muted-foreground">
