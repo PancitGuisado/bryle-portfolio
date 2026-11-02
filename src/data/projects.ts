@@ -19,6 +19,7 @@ export const projects: Project[] = [
     tags: ["Agentic AI", "AI Video", "Automation", "Canvas Engine"],
     link: "https://animaition.vercel.app/",
     featured: true,
+    image: "/projects/animaition.svg",
     category: "agentic",
   },
   {
