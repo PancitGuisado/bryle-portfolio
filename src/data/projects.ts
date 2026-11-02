@@ -8,130 +8,167 @@ export interface Project {
   featured: boolean;
   video?: string;
   image?: string;
+  category?: "agentic" | "automation" | "webapp" | "game";
 }
 
 export const projects: Project[] = [
   {
+    title: "animAItion",
+    description:
+      "AI video automation studio that turns raw prompts into animated social videos in seconds with neural timeline sequencing and browser-rendered canvas animations.",
+    tags: ["Agentic AI", "AI Video", "Automation", "Canvas Engine"],
+    link: "https://animaition.vercel.app/",
+    featured: true,
+    category: "agentic",
+  },
+  {
     title: "EduBridge",
     description:
-      "EduBridge is an educational platform that integrates artificial intelligence with structured learning to improve how students study and how teachers manage their classes.",
-    tags: ["Educational Platform", "Artificial Intelligence", "Structured Learning"],
+      "AI-driven educational platform integrating autonomous tutoring assistance with structured learning workflows for students and teachers.",
+    tags: ["Agentic AI", "Education", "Automation"],
     link: "https://edubridgeorg.vercel.app/",
     featured: true,
     video: "/projects/edubridge.mp4",
+    category: "agentic",
+  },
+  {
+    title: "Resumaker",
+    description:
+      "AI-powered resume engine and formatting automation that crafts structured, ATS-optimized resumes with real-time intelligence.",
+    tags: ["Agentic AI", "Resume Builder", "Web App"],
+    link: "https://airesumaker.vercel.app/",
+    featured: true,
+    video: "/projects/resumaker.mp4",
+    category: "webapp",
+  },
+  {
+    title: "AIPixelCraft",
+    description:
+      "Generative AI pixel art and sprite generator enabling seamless sprite sheet synthesis for game developers.",
+    tags: ["Agentic AI", "Sprite Generator", "Web App"],
+    link: "https://aipixelcraft.vercel.app/",
+    featured: true,
+    video: "/projects/aipixelcraft.mp4",
+    category: "agentic",
   },
   {
     title: "The Signal",
-    description: "A 2D pixel-art top-down sideview tower defense survival game where you must build defenses, manage resources, and survive the waves.",
-    tags: ["Game", "Tower Defense", "Survival", "2D"],
+    description:
+      "2D pixel-art tower defense survival game with resource automation, wave defense systems, and cross-platform mobile build.",
+    tags: ["Game Dev", "Survival", "Tower Defense"],
     github: "https://github.com/PancitGuisado/TheSignal",
     link: "https://thesignalgame.vercel.app/",
     download: "/projects/TheSignal.apk",
     featured: true,
     video: "/projects/thesignal.mp4",
-  },
-  {
-    title: "Resumaker",
-    description:
-      "An AI-powered resume builder that helps users create professional, polished resumes effortlessly with smart formatting and content suggestions.",
-    tags: ["AI", "Resume Builder", "Productivity", "Web App"],
-    link: "https://airesumaker.vercel.app/",
-    featured: true,
-    video: "/projects/resumaker.mp4",
-  },
-  {
-    title: "AIPixelCraft",
-    description: "An AI-powered pixel art and sprite editor that lets users create, edit, and generate sprite sheets or pixel art assets using artificial intelligence.",
-    tags: ["AI", "Pixel Art", "Sprite Editor", "Game Dev"],
-    link: "https://aipixelcraft.vercel.app/",
-    featured: true,
-    video: "/projects/aipixelcraft.mp4",
-  },
-  {
-    title: "Virtual Arduino: Calculator & Smoke Detector",
-    description: "A dual-function virtual Arduino simulation built in Tinkercad featuring an interactive keypad calculator and an automated smoke detection alarm system with real-time buzzer and LED indicators.",
-    tags: ["Arduino", "Tinkercad", "Embedded Systems", "Simulation"],
-    link: "https://www.tinkercad.com/things/4PtQzAUAURA-surprising-elzing",
-    featured: false,
-    image: "/projects/virtual-arduino.png",
-  },
-  {
-    title: "Huling Klase",
-    description: "A Filipino psychological horror story and interactive investigation game. Thirty-nine students. Forty names answered.",
-    tags: ["Game", "Psychological Horror", "Interactive Story", "Detective"],
-    link: "https://hulingklase.vercel.app/",
-    featured: false,
-    image: "/projects/hulingklase.png",
+    category: "game",
   },
   {
     title: "Snapmimi",
-    description: "A free online photobooth web application designed to capture, customize, and cherish cute photostrips and little moments.",
-    tags: ["Photobooth", "Web App", "Camera", "Creative"],
+    description:
+      "Lightweight online photo booth application with instantaneous photo strip layout generation and live filters.",
+    tags: ["Web App", "Camera Tool", "Creative"],
     link: "https://snapmimi.vercel.app/",
     featured: false,
     image: "/projects/snapmimi.png",
+    category: "webapp",
+  },
+  {
+    title: "Huling Klase",
+    description:
+      "Filipino psychological horror interactive investigation narrative game with dynamic branching story state.",
+    tags: ["Interactive Game", "Detective", "Story Engine"],
+    link: "https://hulingklase.vercel.app/",
+    featured: false,
+    image: "/projects/hulingklase.png",
+    category: "game",
+  },
+  {
+    title: "Virtual Arduino Simulation",
+    description:
+      "Dual-function virtual Arduino simulation featuring an interactive calculator and an automated smoke alarm system with buzzer alert.",
+    tags: ["Automation", "Embedded Systems", "IoT"],
+    link: "https://www.tinkercad.com/things/4PtQzAUAURA-surprising-elzing",
+    featured: false,
+    image: "/projects/virtual-arduino.png",
+    category: "automation",
   },
   {
     title: "Kanibalismo",
-    description: "A 2D single-player survival sandbox game featuring a day and night cycle, crafting, and building mechanics.",
-    tags: ["Game", "Survival", "Sandbox", "2D"],
+    description:
+      "2D survival sandbox game featuring procedural cycle systems, crafting, and building mechanics.",
+    tags: ["Game Dev", "Sandbox", "Survival"],
     link: "https://kanibalismo.vercel.app/",
     featured: false,
     video: "/projects/kanibalismo.mp4",
+    category: "game",
   },
   {
     title: "Mocha Moments",
-    description: "A coffeeshop ordering system.",
-    tags: ["Ordering System", "Coffee Shop", "Customer Flow"],
+    description:
+      "Automated coffee shop ordering system with real-time checkout queues and order fulfillment flow.",
+    tags: ["Web App", "Order Automation", "Commerce"],
     github: "https://github.com/PancitGuisado/MochaMomints",
     featured: false,
     video: "/projects/mocha-moments.mp4",
+    category: "automation",
   },
   {
     title: "EZ MART",
     description:
-      "A streamlined e-commerce application that provides users with a seamless online shopping experience, featuring intuitive product navigation and secure checkout.",
-    tags: ["E-commerce", "Online Shopping", "User Experience"],
+      "Streamlined e-commerce web platform with optimized item catalog, shopping bag state, and checkout funnel.",
+    tags: ["Web App", "E-Commerce", "UX"],
     github: "https://github.com/eilrahcdev/EZ-Mart",
     featured: false,
     image: "/projects/ezmart.jpg",
+    category: "webapp",
+  },
+  {
+    title: "PerfumeReco",
+    description:
+      "Algorithmic fragrance recommendation engine matching user taste notes to distinct scent profiles.",
+    tags: ["Web App", "Recommendation Engine", "AI"],
+    link: "https://perfumereco.vercel.app/",
+    featured: false,
+    video: "/projects/perfumereco.mp4",
+    category: "webapp",
   },
   {
     title: "The BigBang Theory Taptap",
-    description: "An interactive tap game based on The Big Bang Theory.",
+    description:
+      "Interactive tap game based on The Big Bang Theory with animated mechanics.",
     tags: ["Game", "Interactive", "Entertainment"],
     link: "https://tbbttaptap.vercel.app/",
     featured: false,
     video: "/projects/taptap.mp4",
+    category: "game",
   },
   {
     title: "Buhay Pedro",
-    description: "A comic-style survival game about Pedro, a lower-class Filipino trying to survive daily with his family. Manage debts, pay bills, and navigate challenges including a friend's gambling addiction.",
-    tags: ["Game", "Survival", "Comic Style", "Resource Management"],
+    description:
+      "Comic-style socio-economic survival game with resource allocation, budget balancing, and event logic.",
+    tags: ["Game Dev", "Resource Management"],
     link: "https://buhaypedro.vercel.app/",
     featured: false,
     video: "/projects/buhaypedro.mp4",
-  },
-  {
-    title: "PerfumeReco",
-    description: "A personalized fragrance recommendation platform helping users discover their ideal scent profiles.",
-    tags: ["Recommendation", "Lifestyle", "Web App"],
-    link: "https://perfumereco.vercel.app/",
-    featured: false,
-    video: "/projects/perfumereco.mp4",
+    category: "game",
   },
   {
     title: "Payroll System",
-    description: "A payroll management system.",
-    tags: ["Payroll", "System", "Management"],
+    description:
+      "Automated payroll calculation, deduction management, and salary reporting engine.",
+    tags: ["Automation", "Enterprise System", "Payroll"],
     github: "https://github.com/PancitGuisado/Payroll.git",
     featured: false,
+    category: "automation",
   },
   {
     title: "Chesster",
-    description: "A chess analysis system.",
-    tags: ["Chess", "Analysis", "Tool"],
+    description:
+      "Chess analysis and game state tracking tool for calculating move trajectories.",
+    tags: ["Web App", "Chess Engine", "Analysis"],
     github: "https://github.com/PancitGuisado/chesster",
     featured: false,
+    category: "webapp",
   },
 ];
