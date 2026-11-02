@@ -23,6 +23,16 @@ export const projects: Project[] = [
     category: "agentic",
   },
   {
+    title: "PetMood AI",
+    description:
+      "AI-powered pet emotion analyzer and translator app built with Capacitor and Gemini Vision. Scans body posture, facial signals, and ears to interpret pet mood with audio speech synthesis.",
+    tags: ["Agentic AI", "Mobile App", "Gemini Vision", "Android"],
+    download: "/projects/PetMood.apk",
+    featured: true,
+    image: "/projects/petmood.svg",
+    category: "agentic",
+  },
+  {
     title: "EduBridge",
     description:
       "AI-driven educational platform integrating autonomous tutoring assistance with structured learning workflows for students and teachers.",

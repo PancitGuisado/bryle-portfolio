@@ -490,7 +490,7 @@ function ProjectCardItem({
   project: Project;
   onOpen: () => void;
 }) {
-  const isNew = project.link === "https://animaition.vercel.app/";
+  const isNew = project.link === "https://animaition.vercel.app/" || project.title === "PetMood AI";
   const videoRef = useRef<HTMLVideoElement>(null);
 
   const handleMouseEnter = () => {
