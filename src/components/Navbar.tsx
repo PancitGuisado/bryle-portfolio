@@ -5,8 +5,6 @@ import { useLocation, useNavigate } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 
 const links = [
-  { label: "About", hash: "about" },
-  { label: "Skills", hash: "skills" },
   { label: "Projects", hash: "projects" },
   { label: "Contact", hash: "contact" },
 ];

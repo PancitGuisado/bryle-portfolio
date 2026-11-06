@@ -149,7 +149,7 @@ export default function HeroSection() {
       </div>
 
       <a
-        href="#about"
+        href="#projects"
         className="absolute bottom-10 left-1/2 -translate-x-1/2 text-muted-foreground transition-all hover:text-primary hover:-translate-y-1"
       >
         <ArrowDown className="h-5 w-5 animate-bounce" />
